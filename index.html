@@ -1,0 +1,177 @@
+<!DOCTYPE html>     <!-- declaratie pt browser ca e un fisier de tip HTML 5 -->
+<html lang="ro-RO">
+<head>
+    <meta charset="UTF-8">      <!-- head si body e struct minima -->
+    <!-- tag-ul acesta se auto inchide
+
+     Cand transmiti informatia pe internet inf e codata pe caractere si UTF-8 are foarte multe caractere si sunt trecute cam toate simbolurile lumii
+
+     in paginile unde sunt ? in loc de diacritice nu e definit corect charset
+
+     -->
+    <!-- head incapsuleaza informatia despre pagina curenta -->
+
+    <title>Lazea Radu - Link-uri utile</title>
+    <!-- e ce vedem cand cautam ceva pe google si sa nu fie mai mare de 80 de caractere pt ca GOOGLE sa nu-l trunchieze -->
+
+    <meta name="robots" content="index, follow">
+
+    <!-- index si follow ii permit lui google sa scaneze pagina si sa mearga pe fiecare link in parte
+
+    follow - ii dau permisiune lui google sa acceseze link-urile pe care le pun pe pagina
+
+    -->
+
+
+    <meta name="viewport" content="width=devide-width,
+    initial-scale=1.0"/>
+
+    <!-- aici resetam dimensiunea site-ului si vrem sa facem asta pt ca face site-ul responsive -->
+
+    <meta name="description"
+          content="Definim continutul paginii noastre: Toate link-urile mele, profilurile de social media">
+
+    <meta property="og:title" content="Lazea Radu"/>
+    <meta property="og:site_name" content="Lazea Radu"/>
+    <meta property="og:locale" content="ro_RO"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.radulazea.ro/linkuri/"/>
+    <meta property="og:image" content="rl-image.jpg"/>
+
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="628"/>
+    <link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+
+<!-- IDE - Editor de text - citste si interpreteaza codul scris
+
+index.html e cam fisierul de baza, prima pagina dintr-un site -->
+
+
+<div class="Container">
+    <header>
+        <img class="Avatar" src="poza1.jpg" width="300" height="600"
+             alt="Imagine profil">
+        <h1 class="TitlulPaginii">
+            <strong>Lazea Radu</strong> <!-- textul acesta e foarte important pt motoarele de cautare -->
+        </h1>
+        <p class="DescriereaPrincipala">Definim continutul paginii noastre: Toate link-urile mele, profilurile de social
+            media.</p>
+
+    </header>
+
+    <main>
+        <ul class="ListaLinkuri">
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri"> 📖 Website si blogul meu</h2>
+                <p class="ListaText">LINK</p> <!-- aici punem textul link-ului -->
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="https://www.youtube.com" class="ListaLink"     
+                   title="Canalul meu de YouTube">              <!-- ce scriu aici apare cand dau hover peste text-->
+                <h2 class="ListaTitluri">🔴 YouTube</h2>
+                <p class="ListaText">https://www.youtube.com</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="https://www.linkedin.com/feed/" class="ListaLink"
+                   title="Profilul meu de LinkedIn">
+                <h2 class="ListaTitluri">✅LinkedIn</h2>
+                <p class="ListaText">https://www.linkedin.com/feed/</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="https://www.facebook.com/" class="ListaLink"
+                   title="Aici ma gasesti pe FaceBook">
+                <h2 class="ListaTitluri">👋FaceBook</h2>
+                <p class="ListaText">https://www.facebook.com/</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="https://www.instagram.com/" class="ListaLink"
+                   title="Vezi profilul meu de Instagram">
+                <h2 class="ListaTitluri">🌟Instagram</h2>
+                <p class="ListaText">https://www.instagram.com/</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="https://twitter.com/home" class="ListaLink"
+                   title="Free speech">
+                <h2 class="ListaTitluri"> 🐦 Twitter</h2>
+                <p class="ListaText">https://twitter.com/home</p>
+                </a>
+            </li>
+<!--            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri"> 💬 Discord</h2>
+                <p class="ListaText">LINK</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri">TITLU</h2>
+                <p class="ListaLink">LINK</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri">TITLU</h2>
+                <p class="ListaLink">LINK</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri">TITLU</h2>
+                <p class="ListaLink">LINK</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri">TITLU</h2>
+                <p class="ListaLink">LINK</p>
+                </a>
+            </li>
+            <li class="ListaItem">
+                <a href="URL" class="ListaLink"
+                   title="TITLU">
+                <h2 class="ListaTitluri">TITLU</h2>
+                <p class="ListaLink">LINK</p>
+                </a>
+            </li>-->
+        </ul>
+
+    </main>
+</div>
+</body>
+</html>
+
+
+<!-- 
+    
+    Nu ai voie sa folosesti mai multe id-uri, nu poti avea acelasi ID de 2 ori
+    De aceea clasele sunt sfinte
+
+    ID-urile sunt bune pt formulare
+
+    Nu ai voie sa ai acelasi ID de 2 ori in aceeasi pagina
+
+    Clasele te ajuta sa multiplici acelasi element de cate ori vrei tu
+
+    Poti duplica un elem care are acelasi ID de mai multe ori in aceeasi pagina doar ca:
+    - iti va aparea eroare
+    - validatorul de HTML o sa tipe:
+        - nu ai voie sa folosesti acelasi id de mai multe ori intr-o pagina.
+
+
+-->
