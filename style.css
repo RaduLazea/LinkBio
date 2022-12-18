@@ -2,126 +2,175 @@
     margin:0;
     padding: 0;
 } */
-
 html {
-    background: black url("background1.jpeg") center center no-repeat;
-    background-size: cover;
-    color: white;
+  background: black url(background1.jpeg) center center no-repeat;
+  background-size: cover;
+  color: white;
 }
 
 body {
-    /*
-    aici definim chestii de baza
+  /*
+  aici definim chestii de baza
 
-     de float nu prea mai ai nevoie in html, css
+   de float nu prea mai ai nevoie in html, css
 
-     */
+   */
+  display: block;
+  place-items: center;
+  margin: 0;
+  font-family: Inter, Helvetica, Arial, sans-serif; /* e o familie de fonturi */
+  font-size: 16px;
+  line-height: 1.5em; /* 16 * 1.5
 
-    display: block;
-    place-items: center;
-    margin: 0;
-    font-family: Inter, Helvetica, Arial, sans-serif; /* e o familie de fonturi */
-    font-size: 16px;
-    line-height: 1.5em; /* 16 * 1.5
+Asta e optim pt lizibilitate
 
-     Asta e optim pt lizibilitate
-
-     */
+*/
 }
-@media (min-width: 500px) {body{display: grid;}} /* de la minim 500 de pixeli in sus body-ul va fi display grid */
+@media (min-width: 500px) {
+  body {
+    display: grid;
+  }
+}
 
+/* de la minim 500 de pixeli in sus body-ul va fi display grid */
 /* serif fonts */
+.Container {
+  /* width: 90%; /* folosesc 90% din latimea ecranului */
+  /* 1vh = 1% din inaltimea totala a ecranului */
+  background: rgba(79, 109, 245, 0.8); /* a vine de la opacitate ( 1 = 100% ) */
+  padding: 1rem; /* 1 rem e 16 px, cat am setat eu font size */
+  font-size: clamp(1rem, 2vw, 2rem); /* aici schimbam dinamic dimensiunea fontului */
+  /*
+      clamp - min sa fie 1 rem, daca valoarea lui 2vw<16px
+    , iar daca creste mai mult de 2*rem= 32px sa fie 2rem
 
-.Container{
+    2vw = 2% din latimea ecranului
 
-    /* width: 90%; /* folosesc 90% din latimea ecranului */
-     /* 1vh = 1% din inaltimea totala a ecranului */
-    background: rgba(79,109,245,0.8); /* a vine de la opacitate ( 1 = 100% ) */
-    padding: 1rem; /* 1 rem e 16 px, cat am setat eu font size */
+    daca 2vw < 1 rem = atunci ramane 1 rem = 16 px
+    daca 2vw > 2 rem = atunci ramane 2 rem = 32 px
 
-    font-size: clamp(1rem,2vw,2rem);   /* aici schimbam dinamic dimensiunea fontului */
-    /* 
-        clamp - min sa fie 1 rem, daca valoarea lui 2vw<16px
-      , iar daca creste mai mult de 2*rem= 32px sa fie 2rem 
+  */
+  line-height: 1.5em; /* 1.5 * marimea curenta a fontului
 
-      2vw = 2% din latimea ecranului
+1 em inseamna ca inaltimea fiecarei linii e echivalent cu font size-ul acelei linii */
+  /* de la 300px in sus pe latime intervine linia asta de cod */
+  /* in Container avem 2 media queries care referentiaza direct container-ul
 
-      daca 2vw < 1 rem = atunci ramane 1 rem = 16 px
-      daca 2vw > 2 rem = atunci ramane 2 rem = 32 px
+  Cce vedem aici se transforma in formatul de scris din CSS cand se compileaza
 
-    */
-
-    line-height: 1.5em; /* 1.5 * marimea curenta a fontului
-
-    1 em inseamna ca inaltimea fiecarei linii e echivalent cu font size-ul acelei linii */
+  */
 }
-
-
 @media (min-width: 300px) {
-    .Container{margin: 2vh;padding: 2rem;border-radius: 2rem;}
+  .Container {
+    margin: 2vh;
+    padding: 2rem;
+    border-radius: 2rem;
+  }
 }
-
-/* de la 300px in sus pe latime intervine linia asta de cod */
-
-@media (min-width: 500px){
-        .Container{margin: 7vw; padding: 3rem}
+@media (min-width: 500px) {
+  .Container {
+    margin: 7vw;
+    padding: 3rem;
+  }
 }
-
 
 /*}@media (min-width: 800px){
         .Container{margin: 4vw; padding: 3rem}
 }*/
-
-
 /* AM RAMAS LA 2:31:08 */
+header .Avatar {
+  display: block;
+  width: 112px;
+  height: auto;
+  margin: 0 1em 0 0;
+  border-radius: 50%;
+}
+@media (min-width: 380px) {
+  header .Avatar {
+    float: left;
+  }
+}
+@media (min-width: 900px) {
+  header .Avatar {
+    width: clamp(130px, 14vw, 12rem);
+  }
+}
 
+.TitlulPaginii {
+  display: block;
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1em;
+}
 
-    header{ }
-        .Avatar{ display: block; width: 112px; height: auto;
-        margin: 0 1em 0 0;border-radius: 50%;}
-        @media (min-width: 380px) {.Avatar{float:left;}}
-        @media (min-width: 900px) {.Avatar{width: clamp(130px,14vw,12rem) }}
-        .TitlulPaginii{ display:block; margin: 0; font-size: clamp(2rem,6vw,4rem); line-height: 1em;
-        }
-        .DescriereaPrincipala{ display:block; margin: 0.5em 0 2em;
-        }
-        @media (min-width: 500px){
-            .DescriereaPrincipala{margin-bottom: 0.5em}
-        }
+.DescriereaPrincipala {
+  display: block;
+  margin: 0.5em 0 2em;
+}
+@media (min-width: 500px) {
+  .DescriereaPrincipala {
+    margin-bottom: 0.5em;
+  }
+}
 
+main {
+  clear: both; /* daca nu as avea clear both avatarul s-ar duce peste, iese din header, asa ca clear both elibereaza influenta pe care o are float
+/* e copilul lui Container */
+}
 
-    main{ clear:both;   /* daca nu as avea clear both avatarul s-ar duce peste, iese din header, asa ca clear both elibereaza influenta pe care o are float
-        /* e copilul lui Container */
-         }
-    
-        .ListaLinkuri{
-            display: block; margin: 0; padding: 0; border-top:1px solid #ffffff ;
-                        /* e copilul lui main */
-        }
+.ListaLinkuri {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ffffff;
+  /* e copilul lui main */
+}
+@media (min-width: 1800px) {
+  .ListaLinkuri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-            .ListaItem{
-                display: block; margin: 0; padding: 0; border-bottom: 1px solid #ffffff;
-            }
-                .ListaLink{ display: block; padding: 0.5em; color: white; text-decoration: none}
-                .ListaLink:hover{background:white; color: black}
-                    .ListaTitluri,.ListaText{display: block; margin: 0; padding: 0; font-size: 1em; line-height: 1.5em;}
-                    .ListaText { display:block; white-space: nowrap; overflow: hidden;text-overflow: ellipsis}
+.ListaItem {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #ffffff;
+}
 
-                    /*
-                    white-space:                nowrap nu lasa textul sa iasa de pe un singur rand
-                    overflow: hidden            taie textul cand se termina container-ul
-                    text-overflow: ellipsis     daca exista overflow pune 3 puncte la final
-                     */
+.ListaLink {
+  display: block;
+  padding: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+.ListaLink:hover {
+  background: white;
+  color: black;
+}
 
+.ListaTitluri, .ListaText {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: 1.5em;
+}
 
+.ListaText {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-        @media (min-width: 1800px) {
-                .ListaLinkuri{display: grid; grid-template-columns: 1fr 1fr;}
-        }
-
-
+/*
+white-space:                nowrap nu lasa textul sa iasa de pe un singur rand
+overflow: hidden            taie textul cand se termina container-ul
+text-overflow: ellipsis     daca exista overflow pune 3 puncte la final
+ */
 /* in CSS incerc sa imit structura din HTML */
-
 /* mobile first e absolut necesar
 
  pe mobil se executa minimul de cod
@@ -130,8 +179,11 @@ body {
 
 
  */
-
 /* prin media putem scrie if-uri in codul CSS
 
 media executa tot ce e intre acoladele doar daca e codul din () valid
- */
+
+
+In SCSS se genereaza fisiere CSS
+
+ *//*# sourceMappingURL=style.css.map */

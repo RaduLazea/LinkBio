@@ -27,8 +27,9 @@ body {
      Asta e optim pt lizibilitate
 
      */
+  @media (min-width: 500px) {display: grid;}
 }
-@media (min-width: 500px) {body{display: grid;}} /* de la minim 500 de pixeli in sus body-ul va fi display grid */
+ /* de la minim 500 de pixeli in sus body-ul va fi display grid */
 
 /* serif fonts */
 
@@ -54,18 +55,23 @@ body {
   line-height: 1.5em; /* 1.5 * marimea curenta a fontului
 
     1 em inseamna ca inaltimea fiecarei linii e echivalent cu font size-ul acelei linii */
-}
 
+  @media (min-width: 300px) {
+    margin: 2vh;padding: 2rem;border-radius: 2rem;}
+  
 
-@media (min-width: 300px) {
-  .Container{margin: 2vh;padding: 2rem;border-radius: 2rem;}
-}
+  /* de la 300px in sus pe latime intervine linia asta de cod */
 
-/* de la 300px in sus pe latime intervine linia asta de cod */
+  @media (min-width: 500px)
+    {margin: 7vw; padding: 3rem}
 
-@media (min-width: 500px){
-  .Container{margin: 7vw; padding: 3rem}
-}
+    /* in Container avem 2 media queries care referentiaza direct container-ul
+
+    Cce vedem aici se transforma in formatul de scris din CSS cand se compileaza
+
+    */
+  }
+
 
 
 /*}@media (min-width: 800px){
@@ -75,37 +81,44 @@ body {
 
 /* AM RAMAS LA 2:31:08 */
 
+  header
+    .Avatar{ display: block; width: 112px; height: auto;
+      margin: 0 1em 0 0;border-radius: 50%;
+      @media (min-width: 380px) { float:left;}
+      @media (min-width: 900px) { width: clamp(130px,14vw,12rem) }
+    }
 
-header{ }
-.Avatar{ display: block; width: 112px; height: auto;
-  margin: 0 1em 0 0;border-radius: 50%;}
-@media (min-width: 380px) {.Avatar{float:left;}}
-@media (min-width: 900px) {.Avatar{width: clamp(130px,14vw,12rem) }}
-.TitlulPaginii{ display:block; margin: 0; font-size: clamp(2rem,6vw,4rem); line-height: 1em;
-}
-.DescriereaPrincipala{ display:block; margin: 0.5em 0 2em;
-}
-@media (min-width: 500px){
-  .DescriereaPrincipala{margin-bottom: 0.5em}
-}
+    .TitlulPaginii{ display:block; margin: 0; font-size: clamp(2rem,6vw,4rem); line-height: 1em;
+    }
+    .DescriereaPrincipala{ display:block; margin: 0.5em 0 2em;
+        @media (min-width: 500px){
+           margin-bottom: 0.5em
+        }
+    }
 
 
-main{ clear:both;   /* daca nu as avea clear both avatarul s-ar duce peste, iese din header, asa ca clear both elibereaza influenta pe care o are float
+
+    main{ clear:both;   /* daca nu as avea clear both avatarul s-ar duce peste, iese din header, asa ca clear both elibereaza influenta pe care o are float
         /* e copilul lui Container */
-}
+    }
 
-.ListaLinkuri{
-  display: block; margin: 0; padding: 0; border-top:1px solid #ffffff ;
-  /* e copilul lui main */
-}
+      .ListaLinkuri{
+        display: block; margin: 0; padding: 0; border-top:1px solid #ffffff ;
+        /* e copilul lui main */
 
-.ListaItem{
-  display: block; margin: 0; padding: 0; border-bottom: 1px solid #ffffff;
-}
-.ListaLink{ display: block; padding: 0.5em; color: white; text-decoration: none}
-.ListaLink:hover{background:white; color: black}
-.ListaTitluri,.ListaText{display: block; margin: 0; padding: 0; font-size: 1em; line-height: 1.5em;}
-.ListaText { display:block; white-space: nowrap; overflow: hidden;text-overflow: ellipsis}
+        @media (min-width: 1800px) 
+          {display: grid; grid-template-columns: 1fr 1fr;}
+        
+      }
+
+        .ListaItem{
+          display: block; margin: 0; padding: 0; border-bottom: 1px solid #ffffff;
+        }
+          .ListaLink{ display: block; padding: 0.5em; color: white; text-decoration: none;
+              &:hover{background:white; color: black}}
+
+            .ListaTitluri,.ListaText{display: block; margin: 0; padding: 0; font-size: 1em; line-height: 1.5em;}
+            .ListaText { display:block; white-space: nowrap; overflow: hidden;text-overflow: ellipsis}
 
 /*
 white-space:                nowrap nu lasa textul sa iasa de pe un singur rand
@@ -113,11 +126,6 @@ overflow: hidden            taie textul cand se termina container-ul
 text-overflow: ellipsis     daca exista overflow pune 3 puncte la final
  */
 
-
-
-@media (min-width: 1800px) {
-  .ListaLinkuri{display: grid; grid-template-columns: 1fr 1fr;}
-}
 
 
 /* in CSS incerc sa imit structura din HTML */
@@ -134,4 +142,8 @@ text-overflow: ellipsis     daca exista overflow pune 3 puncte la final
 /* prin media putem scrie if-uri in codul CSS
 
 media executa tot ce e intre acoladele doar daca e codul din () valid
+
+
+In SCSS se genereaza fisiere CSS
+
  */
